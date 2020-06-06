@@ -33,7 +33,7 @@ export class TeamService {
     this.db.list('/teams').remove(id);
   }
 
-  editPlayer(newTeamData){
+  editTeam(newTeamData){
     const $key = newTeamData.$key;
     delete(newTeamData.$key);
     this.db.list('/teams').update($key, newTeamData)
