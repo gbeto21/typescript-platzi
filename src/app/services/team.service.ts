@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Team } from '../interfaces/team';
-import { AngularFireList, AngularFireDatabase } from '@angular/fire/database/database';
+import { AngularFireList, AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -25,7 +25,7 @@ export class TeamService {
     )
   }
 
-  addPlayer(team: Team){
+  addTeam(team: Team){
     return this.teamsDb.push(team);
   }
 

@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "typescript-platzi",
+      "public": "dist/typescript-platzi",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
