@@ -3,6 +3,7 @@ import { Countries, SquaNumber } from '../interfaces/player';
 import { PlayerService } from '../services/player.service';
 import { TeamService } from '../services/team.service';
 import { take } from 'rxjs/operators';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -42,6 +43,15 @@ export class PlayerDialogComponent implements OnInit {
       players: [...(this.team.players ? this.team.players : []), playerFormValueKey]
     }
     this.teamService.editTeam(formattedTeam)
+  }
+
+  onSubmit(playerForm: NgForm){
+    const playerFormValue = {...playerForm.value}
+    if(playerForm.valid){
+      playerFormValue.leftFooted = playerFormValue.leftFooted === '' ? false : playerFormValue.leftFooted;
+    }
+    this.newPlayer(playerFormValue);
+    window.location.replace('#');
   }
 
 }
